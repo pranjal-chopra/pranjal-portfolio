@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pranjal Chopra | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0; padding:0; box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background: linear-gradient(120deg,#020617,#0f172a,#020617);
+  color:#e5e7eb;
+  overflow-x:hidden;
+}
+
+html{scroll-behavior:smooth;}
+
+a{color:#38bdf8;text-decoration:none;}
+
+section{padding:100px 10%;}
+
+h1,h2,h3{color:#f9fafb;}
+
+/* ---------- NAVBAR ---------- */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 10%;
+  background:rgba(2,6,23,0.7);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+nav ul{list-style:none;display:flex;gap:30px;}
+nav a:hover{color:#7dd3fc;}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:40px;
+}
+
+.hero h1{font-size:3.5rem;line-height:1.1;}
+.hero span{
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{margin-top:15px;color:#cbd5f5;}
+
+.hero-card{
+  background:rgba(255,255,255,0.05);
+  padding:40px;
+  border-radius:25px;
+  backdrop-filter: blur(12px);
+}
+
+.btn{
+  margin-top:30px;
+  display:inline-block;
+  padding:14px 34px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+  color:black;
+  font-weight:600;
+}
+
+.btn:hover{opacity:0.85;}
+
+/* ---------- SECTION HEADERS ---------- */
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+}
+
+.section-title span{
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+/* ---------- GRID ---------- */
+.grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* ---------- CARDS ---------- */
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:22px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 25px rgba(56,189,248,0.4);
+}
+
+.badges span{
+  display:inline-block;
+  padding:6px 14px;
+  background:#020617;
+  border-radius:20px;
+  margin:5px 5px 0 0;
+  font-size:0.8rem;
+}
+
+/* ---------- PROJECT BUTTONS ---------- */
+.project-links{
+  margin-top:15px;
+}
+
+.project-links a{
+  margin-right:12px;
+  padding:8px 16px;
+  border-radius:20px;
+  background:#020617;
+  font-size:0.85rem;
+}
+
+.project-links a:hover{background:#38bdf8;color:black;}
+
+/* ---------- FOOTER ---------- */
+footer{
+  text-align:center;
+  padding:50px;
+  background:#020617;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero h1{font-size:2.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h3>Pranjal</h3>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div>
+<h1>Hi, I'm <span>Pranjal Chopra</span></h1>
+<p>B.Tech CSE Student | AI/ML Engineer | Software Developer</p>
+<p>I design intelligent systems, chatbots, and scalable applications.</p>
+<a href="#projects" class="btn">Explore Projects</a>
+</div>
+
+<div class="hero-card">
+<h3>Quick Profile</h3>
+<p>🎓 CSE @ MAIT</p>
+<p>💡 AI / NLP / Software Development</p>
+<p>🏆 Google WE Scholar</p>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">About <span>Me</span></h2>
+<p style="max-width:900px;margin:40px auto;text-align:center;">
+I am a Computer Science Engineering student who enjoys solving complex problems and transforming ideas into practical, real-world applications. I have a strong foundation in data structures, algorithms, and system design, and I actively apply these skills while building AI-powered products such as career assistants, ATS systems, and intelligent chatbots.
+<br><br>
+I approach development with a problem-solving mindset — breaking large challenges into smaller, manageable parts and designing efficient, scalable solutions. I am particularly interested in Artificial Intelligence, Natural Language Processing, and Software Development, and I continuously explore new technologies to improve both performance and user experience.
+<br><br>
+My goal is to grow as a versatile software engineer who can design reliable systems, write clean code, and build products that create real impact.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="section-title">My <span>Skills</span></h2>
+<div class="grid">
+<div class="card"><div class="badges"><span>Python</span><span>C++</span><span>JavaScript</span><span>SQL</span></div></div>
+<div class="card"><div class="badges"><span>Flask</span><span>FastAPI</span><span>React</span></div></div>
+<div class="card"><div class="badges"><span>spaCy</span><span>Sentence-BERT</span><span>HuggingFace</span></div></div>
+<div class="card"><div class="badges"><span>PostgreSQL</span><span>REST APIs</span></div></div>
+<div class="card"><div class="badges"><span>Git</span><span>VS Code</span><span>Android Studio</span></div></div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2 class="section-title">Featured <span>Projects</span></h2>
+<div class="grid">
+
+<div class="card">
+<h3>LinkedIn Career Assistant</h3>
+<p>LLM-powered career guidance chatbot.</p>
+<p><b>Stack:</b> Python, LangChain, HuggingFace, MongoDB, APIs</p>
+<div class="project-links">
+<a href="https://github.com/yourusername/linkedin-career-assistant" target="_blank">GitHub</a>
+<a href="https://your-demo-video-link.com" target="_blank">Demo</a>
+</div>
+</div>
+
+<div class="card">
+<h3>Live Chat Room</h3>
+<p>Real-time chat app using WebSockets.</p>
+<p><b>Stack:</b> Python, Flask, Socket.IO, HTML, CSS</p>
+<div class="project-links">
+<a href="https://github.com/yourusername/live-chat-room" target="_blank">GitHub</a>
+</div>
+</div>
+
+<div class="card">
+<h3>Bakery Shop Management System</h3>
+<p>Inventory & sales manager.</p>
+<p><b>Stack:</b> Python, SQL</p>
+<div class="project-links">
+<a href="https://github.com/yourusername/bakery-management-system" target="_blank">GitHub</a>
+</div>
+</div>
+
+<div class="card">
+<h3>Egg Drop Game</h3>
+<p>Python arcade game.</p>
+<p><b>Stack:</b> Python, Pygame</p>
+<div class="project-links">
+<a href="https://github.com/yourusername/egg-drop-game" target="_blank">GitHub</a>
+<a href="https://your-eggdrop-demo-video.com" target="_blank">Demo</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 class="section-title">Work <span>Experience</span></h2>
+<div class="grid">
+<div class="card">
+<h3>AI/ML Intern - AcuityIT Solutions</h3>
+<p>Resume parsing, job matching, AI chatbot development.</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="section-title">Get In <span>Touch</span></h2>
+<p style="text-align:center;margin-top:30px;">
+<a href="mailto:pranjalchopra2210@gmail.com">pranjalchopra2210@gmail.com</a>
+</p>
+<p style="text-align:center;margin-top:15px;">
+<a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+<a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+<a href="https://leetcode.com/yourusername" target="_blank">LeetCode</a>
+</p>
+</section>
+
+<footer>
+<p>© 2026 Pranjal Chopra</p>
+</footer>
+
+</body>
+</html>
