@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pranjal Chopra — AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#1a1208;
+    --paper:#1c1812;
+    --surface:#252018;
+    --card:#2e2820;
+    --accent:#e8623a;
+    --accent-light:#f0845f;
+    --gold:#d4a843;
+    --muted:#9a8e7e;
+    --text:#e8e0d0;
+    --text-dim:#b5a892;
+    --border:rgba(232,214,180,0.1);
+    --border-hover:rgba(232,214,180,0.25);
+    --serif:'Playfair Display',Georgia,serif;
+    --mono:'DM Mono',monospace;
+    --sans:'DM Sans',sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 2.5rem;height:54px;
+    background:rgba(28,24,18,0.92);backdrop-filter:blur(16px);
+    border-bottom:0.5px solid var(--border);
+  }
+  .nav-logo{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;color:var(--muted)}
+  .nav-links{display:flex;gap:2rem}
+  .nav-links a{font-size:13px;text-decoration:none;color:var(--muted);letter-spacing:0.03em;transition:color 0.2s;cursor:pointer}
+  .nav-links a:hover{color:var(--accent)}
+
+  /* LAYOUT */
+  section{padding:6rem 2.5rem}
+  .container{max-width:880px;margin:0 auto}
+  .ruled{border:none;border-top:0.5px solid var(--border);margin:0}
+  .section-label{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3rem}
+
+  /* HERO */
+  #hero{min-height:100vh;display:flex;align-items:center;padding-top:7rem;padding-bottom:4rem}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:end;width:100%;max-width:880px;margin:0 auto}
+  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+  .hero-name{font-family:var(--serif);font-size:clamp(3.2rem,7vw,5.5rem);line-height:1.0;font-weight:400;margin-bottom:1.2rem;color:var(--text)}
+  .hero-name em{font-style:italic;color:var(--accent)}
+  .hero-desc{font-size:15px;color:var(--text-dim);line-height:1.75;max-width:360px}
+  .hero-cta{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:11px 24px;font-size:12px;letter-spacing:0.06em;text-decoration:none;border:1px solid rgba(232,214,180,0.3);color:var(--text);transition:all 0.25s;font-family:var(--mono);cursor:pointer;background:transparent}
+  .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-solid{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-solid:hover{background:var(--accent-light);border-color:var(--accent-light)}
+  .hero-right{display:flex;flex-direction:column;gap:0.9rem;align-self:stretch;justify-content:flex-end}
+  .stat-card{background:var(--card);border:0.5px solid var(--border);padding:1.2rem 1.5rem;transition:border-color 0.2s}
+  .stat-card:hover{border-color:var(--border-hover)}
+  .stat-num{font-family:var(--serif);font-size:2.4rem;font-weight:400;color:var(--text)}
+  .stat-num em{font-style:italic;color:var(--accent)}
+  .stat-label{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-top:0.25rem}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}
+  .about-title{font-family:var(--serif);font-size:2.1rem;font-weight:400;line-height:1.25;margin-bottom:1.5rem;color:var(--text)}
+  .about-title em{font-style:italic;color:var(--accent)}
+  .about-body{color:var(--text-dim);line-height:1.8;font-size:15px}
+  .about-body p+p{margin-top:1rem}
+  .tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2rem}
+  .tag{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;padding:5px 11px;border:0.5px solid var(--border);color:var(--text-dim);background:var(--surface)}
+
+  /* EXPERIENCE */
+  .exp-item{display:grid;grid-template-columns:140px 1fr;gap:2rem;padding:2.5rem 0;border-top:0.5px solid var(--border)}
+  .exp-item:last-child{border-bottom:0.5px solid var(--border)}
+  .exp-date{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:4px;letter-spacing:0.03em;line-height:1.5}
+  .exp-role{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.3rem;color:var(--text)}
+  .exp-company{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:1rem}
+  .exp-body{color:var(--text-dim);font-size:14px;line-height:1.75}
+  .exp-body ul{padding-left:1.1rem}
+  .exp-body li+li{margin-top:0.5rem}
+
+  /* PROJECTS */
+  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
+  .project-card{background:var(--card);border:0.5px solid var(--border);padding:1.75rem;transition:border-color 0.25s,background 0.25s;position:relative;overflow:hidden}
+  .project-card:hover{border-color:var(--border-hover);background:var(--surface)}
+  .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+  .project-card:hover::before{transform:scaleX(1)}
+  .project-tech{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem}
+  .project-name{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.75rem;color:var(--text)}
+  .project-desc{font-size:13px;color:var(--text-dim);line-height:1.65}
+  .project-link{display:inline-block;margin-top:1.2rem;font-family:var(--mono);font-size:11px;letter-spacing:0.05em;text-decoration:none;color:var(--text-dim);border-bottom:0.5px solid var(--border);padding-bottom:1px;transition:color 0.2s,border-color 0.2s}
+  .project-link:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+  .skill-group{padding:1.5rem;border:0.5px solid var(--border);background:var(--card)}
+  .skill-group-label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+  .skill-items{display:flex;flex-direction:column;gap:0.45rem}
+  .skill-item{font-size:13px;color:var(--text-dim)}
+
+  /* CONTACT */
+  #contact{background:var(--surface)}
+  .contact-heading{font-family:var(--serif);font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.2;margin-bottom:3rem;color:var(--text)}
+  .contact-heading em{font-style:italic;color:var(--accent)}
+  .contact-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+  .contact-link{display:flex;flex-direction:column;gap:0.3rem;text-decoration:none;color:var(--text);padding:1.4rem 1.5rem;border:0.5px solid var(--border);flex:1;min-width:150px;transition:border-color 0.2s,background 0.2s;background:var(--card)}
+  .contact-link:hover{border-color:var(--border-hover);background:var(--paper)}
+  .contact-link-type{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.15rem}
+  .contact-link-val{font-size:14px;color:var(--text-dim)}
+
+  footer{text-align:center;padding:2rem;font-family:var(--mono);font-size:11px;color:var(--muted);border-top:0.5px solid var(--border);background:var(--paper)}
+
+  /* MOBILE */
+  @media(max-width:680px){
+    nav{padding:0 1.25rem}
+    .nav-links{gap:1.2rem}
+    .nav-links a{font-size:12px}
+    section{padding:4rem 1.25rem}
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+    .hero-right{flex-direction:row;overflow-x:auto;padding-bottom:0.5rem}
+    .stat-card{min-width:140px;flex:0 0 auto}
+    .about-grid{grid-template-columns:1fr;gap:2rem}
+    .projects-grid{grid-template-columns:1fr}
+    .skills-grid{grid-template-columns:1fr 1fr;gap:1rem}
+    .exp-item{grid-template-columns:1fr;gap:0.5rem}
+    .exp-date{padding-top:0}
+    .contact-links{flex-direction:column}
+    .contact-link{min-width:unset}
+  }
+  @media(max-width:400px){
+    .skills-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">PC / 2025</span>
+  <div class="nav-links">
+    <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});return false;">About</a>
+    <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'});return false;">Experience</a>
+    <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});return false;">Projects</a>
+    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Contact</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-eyebrow">AI/ML · NLP · Full-Stack</p>
+      <h1 class="hero-name">Pranjal<br><em>Chopra</em></h1>
+      <p class="hero-desc">B.Tech CSE student at MAIT GGSIPU (9.49 CGPA) building intelligent systems — from LLM pipelines to real-time dashboards. Selected in Google Women Engineers Program, top 1% of 30,000+ applicants.</p>
+      <div class="hero-cta">
+        <a class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});return false;">View Projects</a>
+        <a class="btn btn-solid" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-num">9.4<em>9</em></div>
+        <div class="stat-label">CGPA · MAIT GGSIPU</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">top <em>1%</em></div>
+        <div class="stat-label">Google WE · 30K+ applicants</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">87<em>%+</em></div>
+        <div class="stat-label">NLP Accuracy · AcuityIT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="ruled">
+
+<section id="about">
+  <div class="container">
+    <p class="section-label">// 01 — about</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="about-title">Engineer.<br><em>Builder.<br>Researcher.</em></h2>
+      </div>
+      <div>
+        <div class="about-body">
+          <p>I'm a third-year Computer Science student at Maharaja Agrasen Institute of Technology, New Delhi, working at the intersection of applied AI, NLP, and full-stack engineering. I enjoy the full stack — designing ML pipelines to building the interfaces that make them useful.</p>
+          <p>I've built AML risk detection systems, LLM-powered career assistants, and real-time NLP pipelines for HR automation. I also collaborate on research in multi-attribute bias detection in AI resume screening at MAIT.</p>
+          <p>Selected for the LinkedIn CoachIn Program (one of 80 participants nationwide) and participated in Google Immersion Week with workshops by 10+ Google engineers.</p>
+        </div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">React.js</span>
+          <span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">Hugging Face</span>
+          <span class="tag">RAG</span><span class="tag">Vector Search</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span><span class="tag">n8n</span><span class="tag">Ollama</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="ruled">
+
+<section id="experience">
+  <div class="container">
+    <p class="section-label">// 02 — experience</p>
+    <div class="exp-item">
+      <div class="exp-date">Jun – Aug 2025</div>
+      <div>
+        <div class="exp-role">AI/ML Intern</div>
+        <div class="exp-company">AcuityIT Solutions · New Delhi</div>
+        <div class="exp-body"><ul>
+          <li>Engineered NLP pipelines using Hugging Face and Ollama, achieving 87%+ accuracy on resume parsing and job-matching across a 500+ candidate dataset.</li>
+          <li>Designed an AI-powered chatbot with n8n, integrating PostgreSQL, LLaMA, and OpenRouter with custom workflow nodes — reducing manual query handling for in-house HR applications.</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">2024 – 2026</div>
+      <div>
+        <div class="exp-role">Scholar</div>
+        <div class="exp-company">Google Women Engineers Program</div>
+        <div class="exp-body"><ul>
+          <li>Selected as top 1% of 30,000+ applicants through a rigorous four-tier selection process. Awarded ₹1,00,000 scholarship.</li>
+          <li>Participated in Google Immersion Week with workshops led by 10+ Google engineers on engineering leadership and decision-making.</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">Mar – Jul 2025</div>
+      <div>
+        <div class="exp-role">Mentee</div>
+        <div class="exp-company">LinkedIn CoachIn Program</div>
+        <div class="exp-body"><ul>
+          <li>Selected as one of 80 participants nationwide for a mentorship initiative for women engineering students.</li>
+          <li>Participated in monthly tech talks, mock interviews, and live sessions.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="ruled">
+
+<section id="projects">
+  <div class="container">
+    <p class="section-label">// 03 — projects</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-tech">React.js · TypeScript · FastAPI · ML</div>
+        <div class="project-name">SentinelX — AML Risk Detection</div>
+        <p class="project-desc">A React + TypeScript dashboard visualising 1,000+ flagged transactions with risk queues, alert timelines, and explainable AI outputs. Integrated with a FastAPI backend and real-time ML scoring pipeline, reducing analyst review time by ~30%.</p>
+        <a href="https://github.com/pranjal-chopra" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-tech">LangChain · Hugging Face · MongoDB</div>
+        <div class="project-name">LinkedIn Career Assistant</div>
+        <p class="project-desc">An LLM-powered career assistant using LangChain and Hugging Face with vector search, embeddings, and prompt pipelines backed by MongoDB conversational memory. Delivers 50+ real-time job listings per query via semantic similarity thresholding.</p>
+        <a href="https://github.com/pranjal-chopra" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-tech">Next.js 14 · TypeScript · Vercel</div>
+        <div class="project-name">Film Roll Calendar</div>
+        <p class="project-desc">A darkroom-themed calendar component built as a frontend design challenge. Deployed live on Vercel with a focus on typography, spatial composition, and distinctive visual identity.</p>
+        <a href="https://github.com/pranjal-chopra" target="_blank" class="project-link">View Live →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-tech">Flask · Socket.IO · WebSocket</div>
+        <div class="project-name">Live Chat Room</div>
+        <p class="project-desc">A real-time multi-user chat application with event-driven architecture and room-based session management. Built with Flask and Socket.IO supporting concurrent users via WebSocket communication.</p>
+        <a href="https://github.com/pranjal-chopra" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="ruled">
+
+<section id="skills">
+  <div class="container">
+    <p class="section-label">// 04 — skills</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">Languages</div>
+        <div class="skill-items">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">JavaScript / TypeScript</span>
+          <span class="skill-item">C / C++</span>
+          <span class="skill-item">SQL</span>
+          <span class="skill-item">HTML / CSS</span>
+          <span class="skill-item">Kotlin</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">AI / ML / NLP</div>
+        <div class="skill-items">
+          <span class="skill-item">RAG & Vector Search</span>
+          <span class="skill-item">LangChain</span>
+          <span class="skill-item">Hugging Face Transformers</span>
+          <span class="skill-item">Prompt Engineering</span>
+          <span class="skill-item">LLM Fine-tuning</span>
+          <span class="skill-item">spaCy · Sentence-BERT</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Frameworks & Tools</div>
+        <div class="skill-items">
+          <span class="skill-item">React.js · FastAPI · Flask</span>
+          <span class="skill-item">PostgreSQL · MongoDB</span>
+          <span class="skill-item">Docker · Git · GitHub</span>
+          <span class="skill-item">n8n · Ollama</span>
+          <span class="skill-item">REST APIs · WebSocket</span>
+          <span class="skill-item">PyMuPDF · Apache Tika</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="ruled">
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label">// 05 — contact</p>
+    <h2 class="contact-heading">Let's build something <em>interesting</em> together.</h2>
+    <div class="contact-links">
+      <a href="mailto:pranjalchopra2210@gmail.com" class="contact-link">
+        <span class="contact-link-type">Email</span>
+        <span class="contact-link-val">pranjalchopra2210@gmail.com</span>
+      </a>
+      <a href="https://linkedin.com/in/pranjal-chopra" target="_blank" class="contact-link">
+        <span class="contact-link-type">LinkedIn</span>
+        <span class="contact-link-val">/in/pranjal-chopra</span>
+      </a>
+      <a href="https://github.com/pranjal-chopra" target="_blank" class="contact-link">
+        <span class="contact-link-type">GitHub</span>
+        <span class="contact-link-val">/pranjal-chopra</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Pranjal Chopra · AI/ML Engineer · New Delhi, India · 2025
+</footer>
+
+</body>
+</html>
